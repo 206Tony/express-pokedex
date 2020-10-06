@@ -18,7 +18,7 @@ app.use(methodOverride('_method'));
 // GET / - main index of site
 app.get('/', function(req, res) {
   var pokemonUrl = 'http://pokeapi.co/api/v2/pokemon/?limit=151';
-  axios.get(pokemonUrl).then(function(apiResponse) {
+  axios.get(pokemonUrl).then( (apiResponse) => {
     var pokemon = apiResponse.data.results;
     res.render('index', { pokemon });
   })

@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../models')
+var db = require('../models');
 var axios = require('axios');
 
 router.get('/', function(req, res) {
@@ -14,7 +14,7 @@ router.post('/', function(req, res) {
   db.pokemon.create({
     name: req.body.name
   }).then(function() {
-    res.redirect('pokemon');
+    res.redirect('/pokemon');
   })
 });
 
